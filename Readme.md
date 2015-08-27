@@ -5,7 +5,9 @@ an edm popularity classifier
 
 ## todo
 
-* Acousticbrainz API
+* AcousticBrainz features:
+  * Which would make the most sense?
+  * How to store?
 
 * Get charts from:
   * Spotify: [URL](http://charts.spotify.com/api/tracks/most_streamed/global/daily/latest)

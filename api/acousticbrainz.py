@@ -19,3 +19,17 @@ def get(mbid, level='low', n=0):
     url = API_URL.format(mbid=mbid, level=level+'-level')
 
     return requests.get(url, params=dict(n=n))
+
+
+def get_high(mbid):
+    """Get the high level dictionary from acousticbrainz data. """
+    data = get(mbid, level='high').json()
+
+    rv = dict(
+        female=data['highlevel']['gender']['all']['female'],
+        bright=data['highlevel']['timbre']['all']['bright'],
+        danceable=data['highlevel']['danceability']['all']['danceable'],
+        voice=data['highlevel']['voice_instrumental']['all']['voice'],
+    )
+
+    return rv
