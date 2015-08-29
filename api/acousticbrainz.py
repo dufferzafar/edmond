@@ -26,13 +26,12 @@ def get_high(mbid):
     data = get(mbid, level='high').json()
 
     rv = dict(
-        female=data['highlevel']['gender']['all']['female'],
-        bright=data['highlevel']['timbre']['all']['bright'],
-        danceable=data['highlevel']['danceability']['all']['danceable'],
-        dortmund=data['highlevel']['genre_dortmund']['probability'],
         acoustic=data['highlevel']['mood_acoustic']['acoustic'],
         aggressive=data['highlevel']['mood_aggressive']['aggressive'],
+        danceable=data['highlevel']['danceability']['all']['danceable'],
+        dortmund=data['highlevel']['genre_dortmund']['probability'],
         electronic=data['highlevel']['mood_electronic']['electronic'],
+        female=data['highlevel']['gender']['all']['female'],
         happy=data['highlevel']['mood_happy']['happy'],
         party=data['highlevel']['mood_party']['party'],
         relaxed=data['highlevel']['mood_relaxed']['relaxed'],
@@ -52,7 +51,7 @@ def get_low(mbid):
         average_loudness=['lowlevel']['average_loudness'],
         barkbands_crest=['lowlevel']['barkbands_crest']['mean'],
         barkbands_kurtosis=['lowlevel']['barkbands_kurtosis']['mean'],
-        barkabnds_flatness_db=['lowlevel']['barkabnds_flatness_db']['mean'],
+        barkbands_flatness_db=['lowlevel']['barkbands_skewnessnds_flatness_db']['mean'],
         barkbands_skewness=['lowlevel']['barkbands_skewness']['mean'],
         barkbands_spread=['lowlevel']['barkbands_spread']['mean'],
         dissonance=['lowlevel']['dissonance']['mean'],
