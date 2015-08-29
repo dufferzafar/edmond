@@ -49,7 +49,40 @@ def get_low(mbid):
     data = get(mbid).json()
 
     rv = dict(
-        
+        average_loudness=['lowlevel']['average_loudness'],
+        barkbands_crest=['lowlevel']['barkbands_crest']['mean'],
+        barkbands_kurtosis=['lowlevel']['barkbands_kurtosis']['mean'],
+        barkabnds_flatness_db=['lowlevel']['barkabnds_flatness_db']['mean'],
+        barkbands_skewness=['lowlevel']['barkbands_skewness']['mean'],
+        barkbands_spread=['lowlevel']['barkbands_spread']['mean'],
+        dissonance=['lowlevel']['dissonance']['mean'],
+        dynamic_complexity=['lowlevel']['dynamic_complexity'],
+        errbands_crest=['lowlevel']['errbands_crest']['mean'],
+        errbands_flatness_db=['lowlevel']['errbands_flatness_db']['mean'],
+        errbands_kurtosis=['lowlevel']['errbands_kurtosis']['mean'],
+        errbands_skewness=['lowlevel']['errbands_skewness']['mean'],
+        errbands_spread=['lowlevel']['errbands_spread']['mean'],
+        hfc=['lowlevel']['hfc']['mean'],
+        melbands_crest=['lowlevel']['melbands_crest']['mean'],
+        melbands_flatness_db=['lowlevel']['melbands_flatness_db']['mean'],
+        melbands_kurtosis=['lowlevel']['melbands_kurtosis']['mean'],
+        melbands_skewness=['lowlevel']['melbands_skewness']['mean'],
+        melbands_spread=['lowlevel']['melbands_spread']['mean'],
+        pitch_salience=['lowlevel']['pitch_salience']['mean'],
+        silence_rate_30db=['lowlevel']['silence_rate_30db']['mean'],
+        spectral_centroid=['lowlevel']['spectral_centroid']['mean'],
+        spectral_complexity=['lowlevel']['spectral_complexity']['mean'],
+        spectral_decrease=['lowlevel']['spectral_decrease']['mean'],
+        spectral_energy=['lowlevel']['spectral_energy']['mean'],
+        spectral_entropy=['lowlevel']['spectral_entropy']['mean'],
+        spectral_flux=['lowlevel']['spectral_flux']['mean'],
+        spectral_rms=['lowlevel']['spectral_rms']['mean'],
+        spectral_kurtosis=['lowlevel']['spectral_kurtosis']['mean'],
+        spectral_skewness=['lowlevel']['spectral_skewness']['mean'],
+        spectral_spread=['lowlevel']['spectral_spread']['mean'],
+        spectral_rolloff=['lowlevel']['spectral_rolloff']['mean'],
+        spectral_strongpeak=['lowlevel']['spectral_strongpeak']['mean'],
+        zerocrossingrate=['lowlevel']['zerocrossingrate']['mean'],
     )
 
     return rv
