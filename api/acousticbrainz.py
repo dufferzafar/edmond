@@ -29,7 +29,27 @@ def get_high(mbid):
         female=data['highlevel']['gender']['all']['female'],
         bright=data['highlevel']['timbre']['all']['bright'],
         danceable=data['highlevel']['danceability']['all']['danceable'],
+        dortmund=data['highlevel']['genre_dortmund']['probability'],
+        acoustic=data['highlevel']['mood_acoustic']['acoustic'],
+        aggressive=data['highlevel']['mood_aggressive']['aggressive'],
+        electronic=data['highlevel']['mood_electronic']['electronic'],
+        happy=data['highlevel']['mood_happy']['happy'],
+        party=data['highlevel']['mood_party']['party'],
+        relaxed=data['highlevel']['mood_relaxed']['relaxed'],
+        sad=data['highlevel']['mood_sad']['sad'],
+        timbre=data['highlevel']['timbre']['all']['bright'],
+        tonal=data['highlevel']['tonal_atonal']['all']['tonal'],
         voice=data['highlevel']['voice_instrumental']['all']['voice'],
+    )
+
+    return rv
+
+def get_low(mbid):
+    """https://www.youtube.com/watch?v=12CeaxLiMgE"""
+    data = get(mbid).json()
+
+    rv = dict(
+        
     )
 
     return rv
