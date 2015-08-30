@@ -1,8 +1,9 @@
 """ Fetch data from sources and dump to disk. """
 
-import os
+import atexit
 import json
 import logging
+import os
 
 from api import lastfm, pushbullet
 from track import get_info as track_info
@@ -51,7 +52,10 @@ for page in range(1, 2):
                         PB_PARAMS['body'] = PB_PARAMS['body'].format(count=count_files)
                         pushbullet.send(**PB_PARAMS)
 
-# Game Over!
-PB_PARAMS['title'] = 'Finished: ' + PB_PARAMS['title']
-PB_PARAMS['body'] = PB_PARAMS['body'].format(count=count_files)
-pushbullet.send(**PB_PARAMS)
+
+@atexit.register
+def exit():
+    """ Game Over. """
+    PB_PARAMS['title'] = 'Finished: ' + PB_PARAMS['title']
+    PB_PARAMS['body'] = PB_PARAMS['body'].format(count=count_files)
+    pushbullet.send(**PB_PARAMS)
