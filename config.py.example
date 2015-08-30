@@ -28,3 +28,7 @@ PB_PARAMS = dict(
 # A new notification will be send when
 # these many files have been downloaded.
 PB_NOTIFY_WHEN = 1000
+
+# Amount of data to fetch from Last.fm
+LFM_PAGES = range(1, 5000)
+LFM_PER_PAGE = 500
