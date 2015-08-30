@@ -1,3 +1,22 @@
+from api import lastfm, acousticbrainz
+
+
+def get_info(mbid):
+    """ Fetch track information from multiple sources. """
+    try:
+        # Last.fm
+        lfm = lastfm.get(method='track.getInfo', mbid=mbid).json()
+
+        # AcousticBrainz
+        ab_high = acousticbrainz.get(mbid=mbid, level='high').json()
+        ab_low = acousticbrainz.get(mbid=mbid, level='low').json()
+    except ValueError:
+        # TODO: What if a song is on last.fm but not on AB?
+        return None
+
+    return features(lfm, ab_high, ab_low)
+
+
 def features(lfm, ab_high, ab_low):
     """ Build features dictionary. """
 
@@ -62,3 +81,6 @@ def features(lfm, ab_high, ab_low):
     }
 
     return rv
+
+if __name__ == '__main__':
+    print(get_info(mbid="c741a7ef-dd33-4c79-a4d4-8745d9675620"))
