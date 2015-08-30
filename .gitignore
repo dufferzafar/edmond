@@ -1,6 +1,10 @@
 # Our data dumps
 dump/
 
+# Configuration file
+# cp config.py.example config.py
+config.py
+
 # Spyder's Data File Format
 *.spydata
 

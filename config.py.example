@@ -1,0 +1,19 @@
+PB_PARAMS = dict(
+    # Pushbullet Access Token
+    # https://www.pushbullet.com/#settings
+    token="",
+
+    # Message to send
+    title="Data Dumper",
+    body="{count} files have been downloaded.",
+
+    # Push is sent to this device
+    target="",
+
+    # Push appears as if sent from this device
+    source="",
+)
+
+# A new notification will be send when
+# these many files have been downloaded.
+PB_NOTIFY_WHEN = 1000
