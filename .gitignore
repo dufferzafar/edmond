@@ -1,3 +1,8 @@
+# Our data dumps
+dump/
+
+# Spyder's Data File Format
+*.spydata
 
 ###Python###
 

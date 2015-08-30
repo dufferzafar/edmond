@@ -14,7 +14,7 @@ def get_info(mbid):
         # TODO: What if a song is on last.fm but not on AB?
         return None
 
-    return features(lfm, ab_high, ab_low)
+    return (lfm, ab_high, ab_low)
 
 
 def features(lfm, ab_high, ab_low):
