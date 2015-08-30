@@ -2,6 +2,7 @@
 
 import os
 import json
+import logging
 
 from api import lastfm, pushbullet
 from track import get_info as track_info
@@ -9,7 +10,11 @@ from track import get_info as track_info
 from config import (
     PB_PARAMS,
     PB_NOTIFY_WHEN,
+    LOGGING_PARAMS,
 )
+
+# Setup Logging
+logging.basicConfig(**LOGGING_PARAMS)
 
 # Folder to dump data to
 folder = 'dump'

@@ -1,3 +1,14 @@
+from logging import DEBUG
+
+# Parameters used to log output
+LOGGING_PARAMS = dict(
+    filename='dumper_progress.log',
+    filemode='w',
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    level=DEBUG,
+)
+
+# Parameters used by the Pushbullet API
 PB_PARAMS = dict(
     # Pushbullet Access Token
     # https://www.pushbullet.com/#settings
