@@ -28,7 +28,7 @@ if not os.path.exists(folder):
 count_files = 0
 
 # Let's get some data
-for page in range(LFM_PAGES):
+for page in LFM_PAGES:
     r = lastfm.get(method='tag.getTopTracks', tag='electronic',
                    page=page, limit=LFM_PER_PAGE).json()
 
