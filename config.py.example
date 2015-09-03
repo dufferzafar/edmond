@@ -3,7 +3,7 @@ from logging import DEBUG
 # Parameters used to log output
 LOGGING_PARAMS = dict(
     filename='dumper_progress.log',
-    filemode='w',
+    filemode='a',
     format='%(asctime)s - %(levelname)s - %(message)s',
     level=DEBUG,
 )
@@ -28,6 +28,10 @@ PB_PARAMS = dict(
 # A new notification will be send when
 # these many files have been downloaded.
 PB_NOTIFY_WHEN = 1000
+
+# Register for an API account on Last.fm
+# http://www.last.fm/api/accounts
+LFM_KEY = ""
 
 # Amount of data to fetch from Last.fm
 LFM_PAGES = range(1, 5000)

@@ -13,6 +13,7 @@ from config import (
     PB_PARAMS,
     PB_NOTIFY_WHEN,
     LOGGING_PARAMS,
+    LFM_KEY,
     LFM_PAGES,
     LFM_PER_PAGE,
 )
@@ -38,7 +39,7 @@ count_files = 0
 
 # Let's get some data
 for page in LFM_PAGES:
-    r = lastfm.get(method='tag.getTopTracks', tag='electronic',
+    r = lastfm.get(LFM_KEY, method='tag.getTopTracks', tag='electronic',
                    page=page, limit=LFM_PER_PAGE).json()
 
     for track in r['tracks']['track']:

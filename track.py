@@ -1,11 +1,12 @@
 from api import lastfm, acousticbrainz
+from config import LFM_KEY
 
 
 def get_info(mbid):
     """ Fetch track information from multiple sources. """
     try:
         # Last.fm
-        lfm = lastfm.get(method='track.getInfo', mbid=mbid).json()
+        lfm = lastfm.get(LFM_KEY, method='track.getInfo', mbid=mbid).json()
 
         # AcousticBrainz
         ab_high = acousticbrainz.get(mbid=mbid, level='high').json()
