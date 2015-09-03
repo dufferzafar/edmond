@@ -16,6 +16,14 @@ from config import (
     LFM_PER_PAGE,
 )
 
+
+@atexit.register
+def exit():
+    """ Game Over. """
+    PB_PARAMS['title'] = 'Finished: ' + PB_PARAMS['title']
+    PB_PARAMS['body'] = PB_PARAMS['body'].format(count=count_files)
+    pushbullet.send(**PB_PARAMS)
+
 # Setup Logging
 logging.basicConfig(**LOGGING_PARAMS)
 
@@ -55,9 +63,3 @@ for page in LFM_PAGES:
                         pushbullet.send(**PB_PARAMS)
 
 
-@atexit.register
-def exit():
-    """ Game Over. """
-    PB_PARAMS['title'] = 'Finished: ' + PB_PARAMS['title']
-    PB_PARAMS['body'] = PB_PARAMS['body'].format(count=count_files)
-    pushbullet.send(**PB_PARAMS)
