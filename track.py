@@ -5,12 +5,12 @@ from config import LFM_KEY
 def get_info(mbid):
     """ Fetch track information from multiple sources. """
     try:
-        # Last.fm
-        lfm = lastfm.get(LFM_KEY, method='track.getInfo', mbid=mbid).json()
-
         # AcousticBrainz
         ab_high = acousticbrainz.get(mbid=mbid, level='high').json()
         ab_low = acousticbrainz.get(mbid=mbid, level='low').json()
+
+        # Last.fm
+        lfm = lastfm.get(LFM_KEY, method='track.getInfo', mbid=mbid).json()
     except ValueError:
         # TODO: What if a song is on last.fm but not on AB?
         return None
