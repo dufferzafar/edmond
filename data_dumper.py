@@ -42,6 +42,10 @@ for page in LFM_PAGES:
     r = lastfm.get(LFM_KEY, method='tag.getTopTracks', tag='electronic',
                    page=page, limit=LFM_PER_PAGE).json()
 
+    if not r['tracks']['track']:
+        PB_PARAMS['title'] = 'Null! - ' + PB_PARAMS['title']
+        break
+
     for track in r['tracks']['track']:
 
         if track['mbid']:
