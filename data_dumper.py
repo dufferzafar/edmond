@@ -4,6 +4,7 @@ import atexit
 import json
 import logging
 import os
+import time
 
 from api import lastfm, pushbullet
 from track import get_info as track_info
@@ -62,4 +63,6 @@ for page in LFM_PAGES:
                         PB_PARAMS['body'] = PB_PARAMS['body'].format(count=count_files)
                         pushbullet.send(**PB_PARAMS)
 
+        time.sleep(0.5)
 
+    time.sleep(10)
