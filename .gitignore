@@ -1,3 +1,9 @@
+# Backups
+*.xz
+*.zip
+*.bz2
+*.bak
+
 # Our data dumps
 dump/
 
