@@ -24,6 +24,7 @@ def features(lfm, ab_high, ab_low):
     rv = {
         # Last.fm
         "Name": lfm['track']['name'],
+        "Artist": lfm['track']['artist']['name'],
         "MBID": lfm['track']['mbid'],
         "Duration": lfm['track']['duration'],
         "Listeners": lfm['track']['listeners'],
@@ -82,6 +83,10 @@ def features(lfm, ab_high, ab_low):
     }
 
     return rv
+
+# TODO: Figure out a way to avoid listing this
+# Currently required to order the columns of the dataframe
+feature_list = ["Name", "Artist", "MBID", "Listeners", "Playcount", "Duration", "ABH - Acoustic", "ABH - Aggressive", "ABH - Danceable", "ABH - Dortmund", "ABH - Electronic", "ABH - Female", "ABH - Happy", "ABH - Party", "ABH - Relaxed", "ABH - Sad", "ABH - Timbre", "ABH - Tonal", "ABH - Voice", "ABL - Average Loudness", "ABL - Barkbands Crest", "ABL - Barkbands Kurtosis", "ABL - Barkbands Flatness dB", "ABL - Barkbands Skewness", "ABL - Barkbands Spread", "ABL - Dissonance", "ABL - Dynamic Complexity", "ABL - Erbbands Crest", "ABL - Erbbands Flatness dB", "ABL - Erbbands Kurtosis", "ABL - Erbbands Skewness", "ABL - Erbbands Spread", "ABL - HFC", "ABL - Melbands Crest", "ABL - Melbands Flatness dB", "ABL - Melbands Kurtosis", "ABL - Melbands Skewness", "ABL - Melbands Spread", "ABL - Pitch Salience", "ABL - Silence Rate 30dB", "ABL - Spectral Centroid", "ABL - Spectral Complexity", "ABL - Spectral Decrease", "ABL - Spectral Energy", "ABL - Spectral Entropy", "ABL - Spectral Flux", "ABL - Spectral RMS", "ABL - Spectral Kurtosis", "ABL - Spectral Skewness", "ABL - Spectral Spread", "ABL - Spectral Rolloff", "ABL - Spectral Strongpeak", "ABL - Zero Crossing Rate"]
 
 if __name__ == '__main__':
     print(get_info(mbid="c741a7ef-dd33-4c79-a4d4-8745d9675620"))
