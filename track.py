@@ -1,21 +1,19 @@
-from api import lastfm, acousticbrainz
+from api import lastfm, echonest
 from config import LFM_KEY
 
 
-def get_info(mbid):
+def get_info(mbid, songname, artist):
     """ Fetch track information from multiple sources. """
     try:
-        # AcousticBrainz
-        ab_high = acousticbrainz.get(mbid=mbid, level='high').json()
-        ab_low = acousticbrainz.get(mbid=mbid, level='low').json()
-
         # Last.fm
         lfm = lastfm.get(LFM_KEY, method='track.getInfo', mbid=mbid).json()
+        # Echonest
+        enest = echonest.get().json()
     except ValueError:
         # TODO: What if a song is on last.fm but not on AB?
         return None
 
-    return (lfm, ab_high, ab_low)
+    return (lfm,enest)
 
 
 def features(lfm, ab_high, ab_low):
