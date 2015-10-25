@@ -42,20 +42,14 @@ for page in LFM_PAGES:
     r = lastfm.get(LFM_KEY, method='tag.getTopTracks', tag='electronic',
                    page=page, limit=LFM_PER_PAGE).json()
 
-    # for song in r['tracks']['track']:
-    #     songname = song['name']
-    #     artist = song['artist']['name']
-    #     print songname, artist
-    # break
-
     if not r['tracks']['track']:
         PB_PARAMS['title'] = 'Null! - ' + PB_PARAMS['title']
         break
 
     for track in r['tracks']['track']:
-        
+
         if track['name'] and track['artist']['name']:
-            info = track_info(mbid=track['mbid'], songname=track['name'], artist=track['artist']['name'])
+            info = track_info(mbid=track['mbid'])
 
             # Dump data to disk!
             if info:

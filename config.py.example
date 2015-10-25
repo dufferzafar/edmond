@@ -36,3 +36,6 @@ LFM_KEY = ""
 # Amount of data to fetch from Last.fm
 LFM_PAGES = range(1, 5000)
 LFM_PER_PAGE = 500
+
+# Echonest Key
+EN_KEY = ""
