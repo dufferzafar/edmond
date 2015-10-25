@@ -5,7 +5,7 @@
 *.bak
 
 # Our data dumps
-dump/
+dump*/
 
 # Configuration file
 # cp config.py.example config.py

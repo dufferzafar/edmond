@@ -3,16 +3,11 @@
 
 an edm popularity classifier
 
-## todo
+## setup
 
-* AcousticBrainz features:
-  * Which would make the most sense?
-  * How to store?
+```bash
+git clone http://github.com/dufferzafar/edmond
 
-* Get charts from:
-  * Spotify: [URL](http://charts.spotify.com/api/tracks/most_streamed/global/daily/latest)
-  * Deezer: [URL](https://developers.deezer.com/api)
-
-* If getting data from these sources, figure out a way to associate the tracks to their MBIDs.
-
-* How will the data be normalized across charts?
+cp config.py.example config.py
+# wget https://gist.github.com/dufferzafar/e72b3f1faf925d29309d/raw/edmond%2520config.py -O config.py
+```
