@@ -1,3 +1,6 @@
+# Dataset
+*.csv
+
 # Backups
 *.xz
 *.zip
